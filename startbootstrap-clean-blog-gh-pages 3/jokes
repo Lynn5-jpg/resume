@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Joke Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f8ff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .joke-box {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 20px 30px;
+      text-align: center;
+      max-width: 500px;
+    }
+
+    .joke {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="joke-box">
+    <div class="joke" id="joke">Click the button to get a joke!</div>
+    <button onclick="generateJoke()">Tell Me a Joke</button>
+  </div>
+
+  <script>
+    const jokes = [
+      "Why don’t scientists trust atoms? Because they make up everything!",
+      "I told my computer I needed a break, and now it won’t stop sending me Kit-Kats.",
+      "Why did the scarecrow win an award? Because he was outstanding in his field!",
+      "I used to play piano by ear, but now I use my hands.",
+      "Parallel lines have so much in common… it’s a shame they’ll never meet."
+    ];
+
+    function generateJoke() {
+      const randomIndex = Math.floor(Math.random() * jokes.length);
+      document.getElementById('joke').textContent = jokes[randomIndex];
+    }
+  </script>
+</body>
+</html>
